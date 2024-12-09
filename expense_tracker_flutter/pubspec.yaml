@@ -1,0 +1,38 @@
+name: expense_tracker_flutter
+description: "A new Flutter project."
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.4 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  basic_utils: ^5.7.0
+  common_utilities: ^0.1.1
+  cupertino_icons: ^1.0.6
+  intl: ^0.17.0
+  data_table_2: ^2.5.15
+  http: ^1.2.2
+  shared_preferences: ^2.3.2
+  get: ^4.6.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+
+  fonts:
+    - family: Mulish
+      fonts:
+        #        - asset: assets/Mulish-SemiBold.ttf
+        - asset: assets/Mulish-Bold.ttf
