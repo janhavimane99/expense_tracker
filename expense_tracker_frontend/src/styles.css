@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #77a9f5;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Mulish', sans-serif;
+  background: linear-gradient(to bottom, #142239, #03080f);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #77a9f5;
+}
+
+.card {
+  background-color: #07162c;
+}
+
+/* Customize success toast */
+.toast-success {
+
+  .toast-message,
+  .toast-title {
+    color: white !important;
+    /* Change text color */
+  }
+}
+
+/* Customize error toast */
+.toast-error {
+
+  .toast-message,
+  .toast-title {
+    color: white !important;
+    /* Change text color */
+  }
+}

@@ -1,0 +1,81 @@
+<div class="card p-2">
+  <h2>Add Expenses</h2>
+
+  <div class="d-flex justify-content-center">
+    <div class="mt-3 p-4" style=" width: 50%;">
+
+      <div class="form-group mb-3">
+        <input type="number" class="form-control" placeholder="Set your budget(₹)" id="setBudget"
+          [(ngModel)]="setBudget">
+      </div>
+
+      <div class="mb-3 d-flex justify-content-center gap-3">
+        <button type="button" class="btn btn-primary" (click)="addBudget()">Add
+          budget</button>
+      </div>
+      <div>
+        <div class="mb-3 d-flex justify-content-end">
+          <p style="float: right;">Budget: ₹ </p>
+          <p style="float: right;">{{budgetAmt | number: "1.2-3"}}</p>
+        </div>
+        <p style="float: right;">Remaining Budget: ₹ {{rimBudgetAmt | number: "1.2-3"}}</p>
+      </div>
+
+      <div>
+        <h3 class="mb-2">Add Expense</h3>
+
+        <form [formGroup]="addExpenses" (submit)="addExpense()">
+          <div class="form-group mb-3">
+            <input type="text" class="form-control" placeholder="Title" id="title" formControlName="title">
+          </div>
+
+          <div class="form-group mb-3">
+            <input type="number" class="form-control" placeholder="Amount(₹)" id="amount" formControlName="amount">
+          </div>
+
+          <div class="form-group mb-3">
+            <input type="date" class="form-control" placeholder="DD-MM-YYYY" id="date" formControlName="date">
+          </div>
+
+          <div class="mb-3 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Add Expense</button>
+          </div>
+        </form>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 30%;">Title</th>
+              <th style="width: 30%;">Amount (₹)</th>
+              <th style="width: 20%;">Date</th>
+              <th style="width: 20%;">Actions</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of expenseDummyList;let i = index">
+            <tr>
+              <td>{{item.title}}</td>
+              <td>{{item.amount}}</td>
+              <td>{{item.date}}</td>
+              <td>
+                <div class="d-flex justify-content-between gap-3" style="width: 100%;">
+                  <button type="button" class="btn btn-primary" (click)="editExpense(i,item)">Edit</button>
+                  <button type="button" class="btn btn-danger" (click)="deleteExpense(i,item)">Delete</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="mt-3" style="float: right;">Total Expenses: ₹ {{totalExpenses | number: "1.2-3"}}</p>
+
+      </div>
+      <div class="d-flex align-items-center mt-3 gap-3">
+        <button type="button" class="btn btn-success" (click)="submitExpenses()">Submit
+          Expenses</button>
+        <button type="button" class="btn btn-danger" (click)="reset()">Reset
+          budget</button>
+      </div>
+
+    </div>
+  </div>
+</div>

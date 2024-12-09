@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card" style="width: 400px;">
+    <div class="card-body">
+
+      <div class="border-bottom border-2 border-primary-subtle mb-4">
+        <h2>Login</h2>
+      </div>
+
+      <form [formGroup]="loginForm" (submit)="submitForm()">
+
+        <div class="form-group mb-3">
+          <label for="username" class="mb-1">Username</label>
+          <input type="text" class="form-control" placeholder="Enter Username" id="username" formControlName="username"
+            [ngClass]="{ 'is-invalid': submitted && f['username'].errors }">
+          @if (submitted && f['username'].errors) {
+          <div class="invalid-feedback">
+            @if (f['username'].errors['required']) {
+            <div style="color:red;">Username is required</div>
+            }
+          </div>
+          }
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="password" class="mb-1">Password</label>
+          <input type="password" class="form-control" placeholder="Enter Password" id="password"
+            formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+          @if (submitted && f['password'].errors) {
+          <div class="invalid-feedback">
+            @if (f['password'].errors['required']) {
+            <div style="color:red;">Password is required</div>
+            }
+          </div>
+          }
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-3">Login</button>
+
+      </form>
+
+      <div class="border-top border-1 border-primary-subtle pt-1.5">
+        <p>Don't have an account? <a href="sign-up" style="color: burlywood;">Sign up here</a></p>
+      </div>
+
+    </div>
+  </div>
+</div>

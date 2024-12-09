@@ -1,0 +1,37 @@
+.card {
+  background-color: #07162c;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #77a9f5;
+}
+
+table {
+  border: 2px solid goldenrod;
+  width: 100%;
+
+  tr {
+
+    th {
+      border: 2px solid goldenrod;
+      background-color: #f8f8f838;
+      padding: 10px 20px;
+    }
+
+    td {
+      border: 2px solid goldenrod;
+      background-color: #f8f8f8de;
+      padding: 10px 20px;
+      color: #0163f5;
+
+    }
+  }
+}
